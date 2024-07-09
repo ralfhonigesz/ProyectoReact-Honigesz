@@ -3,7 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { Flex } from '@chakra-ui/react'
 import { GridLoader } from 'react-spinners'
-import { getProductById } from '../../Data/asyncMock'
+import { doc, getDoc } from 'firebase/firestore'
+import { db } from '../../config/firebase'
 
 const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({})
@@ -13,18 +14,17 @@ const ItemDetailContainer = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        getProductById(productId)
-            .then((data) => {
-                if (!data) {
-                    navigate('/*')
-                } else {
-                    setProducto(data)
-                }
-            })
-
-
-            .catch((error) => console.log(error))
-            .finally(() => setLoading(false))
+        const getData = async () => {
+            const queryRef = doc(db, 'productos', productId)
+            const response = await getDoc(queryRef)
+            const newItem = {
+                ...response.data(),
+                id: response.id
+            }
+            setProducto(newItem)
+            setLoading(false)
+        }
+        getData()
     }, [])
 
 
@@ -37,7 +37,7 @@ const ItemDetailContainer = () => {
                     </Flex >
                     :
                     <Flex justify={'center'} align={'center'}>
-                    <ItemDetail {...producto} />
+                        <ItemDetail {...producto} />
                     </Flex>
             }
 

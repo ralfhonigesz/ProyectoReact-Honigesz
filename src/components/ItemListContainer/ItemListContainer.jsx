@@ -2,8 +2,9 @@ import { Flex, Heading } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
-import { getProducts, getProductsByCategory } from '../../Data/asyncMock'
 import { GridLoader } from 'react-spinners'
+import { db } from '../../config/firebase'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 
 
 const ItemListContainer = ({ title }) => {
@@ -15,12 +16,28 @@ const ItemListContainer = ({ title }) => {
 
   useEffect(() => {
     setLoading(true)
-    const dataProductos = categoryId ? getProductsByCategory(categoryId) : getProducts()
+    const getData = async () => {
+      const coleccion = collection(db, 'productos')
 
-    dataProductos
-      .then((data) => setProducts(data))
-      .catch((error) => console.log(error))
-      .finally(() => setLoading(false))
+      const queryRef = !categoryId ?
+        coleccion
+        :
+        query(coleccion, where('categoria', '==', categoryId))
+
+      const response = await getDocs(queryRef)
+
+      const productos = response.docs.map((doc) => {
+        const newItem = {
+          ...doc.data(),
+          id: doc.id
+        }
+        return newItem
+      })
+      setProducts(productos)
+      setLoading(false)
+    }
+
+    getData()
   }, [categoryId])
 
   return (
