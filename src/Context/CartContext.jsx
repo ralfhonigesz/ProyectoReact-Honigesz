@@ -38,7 +38,7 @@ export const CartContextProvider = ({ children }) => {
     const getQuantity = () => {
         return cart.reduce((acc, item) => acc + item.quantity, 0)
     }
-    console.log(cart)
+    
 
 
     return (
