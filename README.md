@@ -4,7 +4,7 @@
 ![image](https://tiendariver.vteximg.com.br/arquivos/newLogo_1200x300_rojoynegro.png?v=637838351505300000)
 
 ### Vista previa
-
+![image](../tienda_river_plate/src/assets/Grabación%20de%20pantalla%202024-07-16%20002608.gif)
 
 ### Deploy
 
