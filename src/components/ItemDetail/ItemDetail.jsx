@@ -24,7 +24,7 @@ const ItemDetail = ({categoria, descripcion, img, nombre, precio, id, stock}) =>
     }
 
     return (
-        <Card maxW={'xl'} mt={5} mb={5} >
+        <Card maxW={'xl'} mt={3} mb={5} >
         <CardHeader align={'center'}>
             <Image
                 objectFit='cover'

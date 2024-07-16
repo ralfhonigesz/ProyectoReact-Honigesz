@@ -13,19 +13,15 @@ import {
     Flex,
     Button
 } from '@chakra-ui/react'
-import { MdArrowDropDown } from "react-icons/md";
+import { VscMenu } from "react-icons/vsc";
 import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
     return (
-        <Flex h={'10vh'} w={'100%'} justify={'space-between'} align={'center'} backgroundColor={'#D40B0B'}>
-            <Heading h={'5.5rem'} w={'5.5rem'} ml={5}>
-                <Link to='/' ><img src="https://purodiseno.lat/wp-content/uploads/2022/02/RIVER-2-1024x1024.png"/></Link>
-            </Heading>
+        <Flex h={'15vh'} w={'100%'} justify={'space-between'} align={'center'} backgroundColor={'white'} padding={10}>
             <Menu>
-                <MenuButton as={Button} rightIcon={<MdArrowDropDown />}>
-                    Categorias
+                <MenuButton as={Button} rightIcon={<VscMenu />} backgroundColor={'white'}>
                 </MenuButton>
                 <MenuList>
                     <MenuItem>
@@ -45,6 +41,9 @@ const NavBar = () => {
                     </MenuItem>
                 </MenuList>
             </Menu>
+            <Heading h={'100px'} w={'400px'} justifyContent={'center'} align={'center'}>
+                <Link to='/' ><img src="https://tiendariver.vteximg.com.br/arquivos/newLogo_1200x300_rojoynegro.png?v=637838351505300000"/></Link>
+            </Heading>
             <CartWidget />
         </Flex>
     )

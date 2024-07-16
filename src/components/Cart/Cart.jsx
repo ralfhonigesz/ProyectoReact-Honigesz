@@ -75,10 +75,10 @@ const Cart = () => {
                             <Th><Heading color={'black'}>${getTotal()}</Heading></Th>
                             <Th>
                                 <Button
-                                    backgroundColor={'#D40B0B'}
-                                    color={'#fff'}
-                                    _hover={{ backgroundColor: '#EA5E5E', color: '#fff' }}>
-                                    <Link to=''>Finalizar compra</Link>
+                                    backgroundColor={'#BDBDBD'}
+                                    
+                                    _hover={{ color: '#fff' }}>
+                                    <Link to='/checkout'>Finalizar compra</Link>
                                 </Button>
                             </Th>
                         </Tr>

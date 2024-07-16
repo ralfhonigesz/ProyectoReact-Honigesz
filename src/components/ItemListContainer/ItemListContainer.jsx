@@ -44,11 +44,11 @@ const ItemListContainer = ({ title }) => {
     <Flex direction={'column'} justify={'center'} align={'center'}>
       <Heading
         color={'black'}
-        mt={10}
-        textDecorationLine={'underline'}
-        textDecorationStyle={'solid'}
-        textDecorationColor={'#D40B0B'}
-      >{title}</Heading>
+        fontSize={'1.5rem'}
+        fontFamily={'sans-serif'}
+        fontStyle={'italic'}
+        mt={5}>
+        {title}</Heading>
 
       {
         loading ?

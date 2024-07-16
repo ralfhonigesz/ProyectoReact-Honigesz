@@ -1,8 +1,57 @@
-# React + Vite
+## Tienda River Plate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Logo
+![image](https://tiendariver.vteximg.com.br/arquivos/newLogo_1200x300_rojoynegro.png?v=637838351505300000)
 
-Currently, two official plugins are available:
+### Vista previa
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+### Deploy
+
+
+### Descripcion
+Ecommerce de indumentaria de River Plate creado para el curso de React en CoderHouse.
+
+### Construido
+React
+Firebase
+
+### Dependencias
+Chakra
+Axios
+React icons
+React router dom
+React spinners
+React toastify
+SweetAlert2
+
+### Instalación
+# List
+-Clonar repositorio
+    -git clone https://github.com/ralfhonigesz/CreaTuLanding1Honigesz
+-Moverse a la carpeta del proyecto
+    -cd tienda_river_plate
+-Instalamos las dependencias
+    -npm install
+-Compilamos
+    -npm run dev
+
+### Estructura del proyecto
+#### NavBar
+Logo
+Menú de categorías
+Ícono del carrito
+
+#### Body
+Listado de productos
+Detalle de producto
+
+#### Navegación
+Enrutamiento entre las diferentes vistas
+
+#### Carrito
+Vista del carrito de compras
+
+#### Checkout
+Formulario para completar los datos del usuario
+

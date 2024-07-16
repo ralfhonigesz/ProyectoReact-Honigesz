@@ -1,0 +1,8 @@
+#root {
+    background: linear-gradient(135deg, 
+                                white 40%, 
+                                #D40B0B 40%, 
+                                #D40B0B 60%, 
+                                white 60%);
+    min-height: 100vh;
+}
